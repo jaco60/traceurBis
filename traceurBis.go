@@ -11,7 +11,9 @@ func Init() {
 }
 
 // Forward avance le stylet de step pas dans la direction courante
-func Forward(step float64) { fmt.Printf("forward %f\n", step) }
+func Forward(step float64) {
+	fmt.Printf("forward %f\n", step)
+}
 
 // Step avance le stylet d'un pas dans la direction courante
 func Step() { fmt.Println("forward 1") }
