@@ -1,4 +1,4 @@
-package traceurBis
+h package traceurBis
 
 import "fmt"
 
@@ -44,4 +44,10 @@ func Color(col string) { fmt.Printf("color %s\n", col) }
 func Pivote(angle int) {
 	fmt.Printf("right %d\n", angle)
 	angleToReturnToNorth -= angle
+}
+
+// North dirige le stylet vers le nord
+func North() {
+	Pivote(angleToReturnToNorth)
+	angleToReturnToNorth = 0
 }
