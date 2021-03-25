@@ -2,12 +2,12 @@ package traceurBis
 
 import "fmt"
 
-var angleToReturnToNorth int // Angle pour revenir au Nord (en degrés)
+var AngleToReturnToNorth int // Angle pour revenir au Nord (en degrés)
 
 // Init initialise l'environnement du robot
 func Init() {
 	fmt.Println("draw mode")
-	angleToReturnToNorth = 0
+	AngleToReturnToNorth = 0
 }
 
 // Forward avance le stylet de step pas dans la direction courante
@@ -19,13 +19,13 @@ func Step() { fmt.Println("forward 1") }
 // Right tourne le stylet de 90° vers la droite
 func Right() {
 	fmt.Println("right")
-	angleToReturnToNorth -= 90
+	AngleToReturnToNorth -= 90
 }
 
 // Left tourne le stylet de 90° vers la gauche
 func Left() {
 	fmt.Println("left")
-	angleToReturnToNorth += 90
+	AngleToReturnToNorth += 90
 }
 
 // Say affiche une bulle contenant le message mess
@@ -43,11 +43,29 @@ func Color(col string) { fmt.Printf("color %s\n", col) }
 // Pivote tourne le stylet de angle degrés vers la droite
 func Pivote(angle int) {
 	fmt.Printf("right %d\n", angle)
-	angleToReturnToNorth -= angle
+	AngleToReturnToNorth -= angle
 }
 
 // North dirige le stylet vers le nord
 func North() {
-	Pivote(angleToReturnToNorth)
-	angleToReturnToNorth = 0
+	Pivote(AngleToReturnToNorth)
+	AngleToReturnToNorth = 0
+}
+
+// South dirige le stylet vers le sud
+func South() {
+	North()
+	Pivote(180)
+}
+
+// East dirige le stylet vers l'est
+func East() {
+	North()
+	Right()
+}
+
+// West dirige le stylet vers l'ouest
+func West() {
+	North()
+	Left()
 }
