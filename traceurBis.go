@@ -50,7 +50,7 @@ func Pivote(angle int) {
 
 // North dirige le stylet vers le nord
 func North() {
-	Pivote(180 + AngleToReturnToNorth)
+	Pivote(AngleToReturnToNorth)
 	AngleToReturnToNorth = 0
 }
 
